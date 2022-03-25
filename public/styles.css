@@ -1,0 +1,21 @@
+input
+{
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+    border-top: 0px solid black;
+    border-bottom: 1px solid aqua;
+    background-color: rgba(0,0,0,0);
+    color:white;
+    width: 20%;
+    outline: none;
+    animation: colorchange 2s ease-in-out infinite;
+}
+@keyframes colorchange
+{
+    0%{filter: hue-rotate(0deg);}100%{filter: hue-rotate(360deg);}
+}
+body
+{
+    background-color:black;
+    color: white;
+}

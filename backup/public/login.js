@@ -1,0 +1,78 @@
+var criticalsection=false;
+$.get("/loggedin",function(data)
+    {
+        if(data!="") 
+        window.location.href="/dashboard.html";
+    });
+function login(){
+    var email=document.getElementById('loginemail').value;
+    var pass=document.getElementById('loginpass').value;
+    var data= {email:email,password:pass};
+    if (email=='' || pass=='')
+    {
+        alert('enter email and password');
+    }
+    else
+    {
+        if(!criticalsection){
+            criticalsection=true;
+            $.ajax({
+                type: "POST",
+                url: '/sendlogin',
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    if (response=='yes')
+                    {
+                        alert('success');
+                        window.location.href ="/dashboard.html";
+                    }
+                    else 
+                    {
+                        alert('please enter correct details');
+                    }
+                    criticalsection=false;
+                }
+            });
+        }
+        else {
+            
+        }
+}
+}
+function register(){
+    var email=document.getElementById('user').value;
+    var pass=document.getElementById('pass').value;
+    var data= {email:email,password:pass};
+    if (email=='' || pass=='')
+    {
+        alert('enter username and password');
+    }
+    else
+    {
+        if(!criticalsection){
+            criticalsection=true;
+            $.ajax({
+                type: "POST",
+                url: '/sendregister',
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    
+                    if (response=='yes')
+                    {
+                        alert('success');
+                    }
+                    else 
+                    {
+                        alert('the username already exists.');
+                    }
+                    criticalsection=false;
+                }
+            });
+        }
+        else {
+            
+        }
+}
+}

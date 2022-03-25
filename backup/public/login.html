@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" href="loginstyles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="socket.io.js" type="text/javascript"></script>
+    <script src="login.js" type="text/javascript"></script>
+</head>
+<body style="background-color:black;">
+<div class="row" style="background-color: black;margin:auto">
+    <div class="col-md-6 mx-auto p-0" style="margin-top:30px;">
+        <div class="card" >
+            <div class="login-box">
+                
+                <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                    <div class="login-space">
+                        <div class="login">
+                            <div class="group"> <label for="user" class="label">Email</label> <input id="loginemail" type="text" class="input" placeholder="Enter your email"> </div>
+                            <div class="group"> <label for="pass" class="label">Password</label> <input id="loginpass" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
+                            <div class="group"> <input type="submit" class="button" value="Sign In" style="outline: none;" onclick="login()"> </div>
+                            <div class="hr"></div>
+                        </div>
+                        <div class="sign-up-form">
+                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" type="text" class="input" placeholder="Create your Username"> </div>
+                            <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
+                            <div class="group"> <label for="pass" class="label">Email Address</label> <input id="email" type="text" class="input" placeholder="Enter your email address"> </div>
+                            <div class="group"> <input type="submit" class="button" value="Sign Up" style="outline: none;" onclick="register()"> </div>
+                            <div class="hr"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="text-align:center;color:white;"><span>
+    <span style="color: aqua;">V</span>i<span style="color: yellow;">d</span>C<span 
+    style="color: pink;">h</span>a<span style="color: red;">t</span></span></div>
+</body>
+</html>
+<style>
+    span{
+        animation: colshift 2s ease-in-out infinite;
+        font-size:50px; font-family: 'Courier New', Courier, monospace;
+      }
+      @keyframes colshift
+      {
+        0%{filter:hue-rotate(0deg);}100%{filter:hue-rotate(360deg);}
+      }
+</style>
